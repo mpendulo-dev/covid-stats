@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class CovidApiService {
 
   // Covid-19 api URL
-  covidUrl = 'https://pomber.github.io/covid19/timeseries.json';
+  covidUrl = 'https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true';
   constructor(private http: HttpClient) { }
 
   // Method that return the covid api data

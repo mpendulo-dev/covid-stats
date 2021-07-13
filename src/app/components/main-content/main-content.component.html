@@ -1,42 +1,33 @@
+<div class="col d-flex justify-content-center" *ngFor="let country of countryName">
+    <div class="row card-group">
 
-<div class="row">
-    <!-- First card -->
-    <div class="col-sm-3 m-5">
-        <div class="card" style="width: 18rem;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col-4 m-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://restcountries.eu/data/afg.svg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title text-center font-weight-bold">{{country}}</h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Infected: </li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <!-- second card -->
-    <div class="col-sm-3 m-5">
-        <div class="card" style="width: 18rem;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
     </div>
-
-    <!-- Third card -->
-    <div class="col-sm-3 m-5">
-        <div class="card" style="width: 18rem;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-
 </div>
+
+<!-- <div class="col d-flex justify-content-center" *ngFor="let country of countryName">
+    <div class="card m-5 " style="width: 30rem;">
+    <h5 class="card-header text-center font-weight-bold">{{country}}</h5>
+    <img src="https://restcountries.eu/data/afg.svg" width="100px" height="200px" class="card-img-top" alt="...">
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item text-center">Infected:  </li>
+            <li class="list-group-item text-center">Dapibus ac facilisis in</li>
+            <li class="list-group-item text-center">Vestibulum at eros</li>
+        </ul>
+    </div>
+</div>
+</div> -->

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { PagerComponent } from './components/pager/pager.component';
+import { StatsCardsComponent } from './components/stats-cards/stats-cards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MainContentComponent,
-    PagerComponent
+    PagerComponent,
+    StatsCardsComponent
   ],
   imports: [
     BrowserModule,
