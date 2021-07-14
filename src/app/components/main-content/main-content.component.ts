@@ -10,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainContentComponent implements OnInit {
 
+
+  // pagination variables
+    totalLength: any;
+    page: number = 1;
+
     // API data
     covidCountryData;
 
@@ -31,10 +36,13 @@ export class MainContentComponent implements OnInit {
       console.log(data);
       this.covidCountryData = data;
 
+      this.totalLength = this.covidCountryData.length;
+
       for(let i = 0; i < this.covidCountryData.length; i++) {
 
         this.infected += this.covidCountryData[i].infected;
        console.log(typeof(this.covidCountryData[i].infected));
+
         // assign country name
         this.countryName[i] = this.covidCountryData[i].country;
 

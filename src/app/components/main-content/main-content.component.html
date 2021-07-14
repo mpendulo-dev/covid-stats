@@ -1,4 +1,5 @@
-<div class="col d-flex justify-content-center" *ngFor="let country of countryName">
+<div class="col d-flex justify-content-center" *ngFor="let country of countryName |
+ paginate: { itemsPerPage: 1, currentPage: page, totalItems:totalLength }">
     <div class="row card-group">
 
         <div class="col-4 m-3">
@@ -16,4 +17,9 @@
         </div>
 
     </div>
+    
 </div>
+<hr>
+<br>
+<!-- pagination controls -->
+<pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
