@@ -20,9 +20,9 @@ export class MainContentComponent implements OnInit {
 
    // Declare models
     countryName: string[] = [];
-    infected: number = 0;
-    deaths: number;
-    recovered: number;
+    infected: number[] = [];
+    deaths: number[] = [];
+    recovered: number[] = [];
     tested: number;
     flag: string[] = [];
     date: Date;
@@ -34,21 +34,25 @@ export class MainContentComponent implements OnInit {
     this.apiService.getData().subscribe(data => {
 
       console.log(data);
+      // API data
       this.covidCountryData = data;
 
+      // array length
       this.totalLength = this.covidCountryData.length;
 
       for(let i = 0; i < this.covidCountryData.length; i++) {
 
-        this.infected += this.covidCountryData[i].infected;
-       console.log(typeof(this.covidCountryData[i].infected));
+        // stats
+        // this.infected[i] = this.covidCountryData[i].infected;
+        // this.recovered = this.covidCountryData[0].recovered;
+        // this.deaths = this.covidCountryData[0].deceased;
 
         // assign country name
         this.countryName[i] = this.covidCountryData[i].country;
 
 
       }
-        console.log(`infected ${this.infected}`);
+        console.log(this.infected);
     });
     this.country.getCountries().subscribe(data => {
 
