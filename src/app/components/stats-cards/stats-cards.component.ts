@@ -45,8 +45,6 @@ export class StatsCardsComponent implements OnInit {
 
         this.totalDeaths += this.countryData[i].deceased;
       }
-      // test
-      console.log(this.totalDeaths.toLocaleString());
       
     });
   }

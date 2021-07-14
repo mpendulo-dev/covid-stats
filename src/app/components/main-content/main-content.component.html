@@ -1,20 +1,18 @@
 <div class="col d-flex justify-content-center" *ngFor="let country of countryName |
- paginate: { itemsPerPage: 1, currentPage: page, totalItems:totalLength }">
+ paginate: { itemsPerPage: 1, currentPage: page, totalItems:totalLength }" >
     <div class="row card-group">
 
         <div class="col-4 m-3">
             <div class="card" style="width: 18rem;">
-                <img src="https://restcountries.eu/data/afg.svg" class="card-img-top" alt="...">
+                <img src="https://restcountries.eu/data/dza.svg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h3 class="card-title text-center font-weight-bold">{{country}}</h3>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <div>
-                        <li class="list-group-item text-center">Infected:  </li>
-                    </div>
-                    
-                    <li class="list-group-item text-center">Recovered: </li>
-                    <li class="list-group-item text-center">Deaths: </li>
+
+                    <li class="list-group-item text-center">Infected: {{infected}}</li>
+                    <li class="list-group-item text-center">Recovered: {{recovered}}</li>
+                    <li class="list-group-item text-center">Deaths: {{deaths}}</li>
                 </ul>
             </div>
         </div>
@@ -22,6 +20,7 @@
     </div>
     
 </div>
+
 <hr>
 <br>
 <!-- pagination controls -->

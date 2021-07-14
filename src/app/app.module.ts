@@ -10,13 +10,15 @@ import { StatsCardsComponent } from './components/stats-cards/stats-cards.compon
 
 // pagination module
 import {NgxPaginationModule} from 'ngx-pagination';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MainContentComponent,
-    StatsCardsComponent
+    StatsCardsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
