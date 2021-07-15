@@ -4,13 +4,16 @@
 
         <div class="col-4 m-3">
             <div class="card" style="width: 18rem;">
-                <img src="https://restcountries.eu/data/dza.svg" class="card-img-top" alt="...">
+                <div>
+                     <img src="{{flag}}" class="card-img-top" alt="..."> 
+                </div>
+              
                 <div class="card-body">
                     <h3 class="card-title text-center font-weight-bold">{{country}}</h3>
                 </div>
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush" *ngFor="let i of infected">
 
-                    <li class="list-group-item text-center">Infected: {{infected}}</li>
+                    <li class="list-group-item text-center">Infected: {{i}}</li>
                     <li class="list-group-item text-center">Recovered: {{recovered}}</li>
                     <li class="list-group-item text-center">Deaths: {{deaths}}</li>
                 </ul>

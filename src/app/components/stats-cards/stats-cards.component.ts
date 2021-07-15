@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class StatsCardsComponent implements OnInit {
 
   // Total infections
-  totalInfections: number = 0;
+  totalCases: number = 0;
   totalRecovered: number = 0;
   totalDeaths: number = 0;
   countryData;
@@ -20,33 +20,23 @@ export class StatsCardsComponent implements OnInit {
     // Get total infections,recoveries, and number of deaths
     this.apiService.getData().subscribe(data => {
 
-      this.countryData = data;
+      // store data from API to variable
+        this.countryData = data;
 
-      for(let i = 0; i < this.countryData.length; i++){
+        // Iterating through the stats to get totals
+        for(let i = 0; i < this.countryData.length; i++) {
 
-        // total infections
-        this.totalInfections += this.countryData[i].infected;
+          // total number of cases
+          this.totalCases += this.countryData[i].cases;
+          
+          // total number of recovered patients
+          this.totalRecovered += this.countryData[i].recovered;
 
-        // total recoveries - Condtion for null recovered data
-  
-        if(this.countryData[i].recovered == 'NA') {
-
-          this.countryData[i].recovered = 0;
+          // total number of deaths
+          this.totalDeaths += this.countryData[i].deaths;
         }
-
-        this.totalRecovered += this.countryData[i].recovered;
-
-        // total number of deaths
-
-        if(this.countryData[i].deceased == 'NA') {
-
-          this.countryData[i].deceased = 0;
-        }
-
-        this.totalDeaths += this.countryData[i].deceased;
-      }
-      
     });
+
   }
 
 }

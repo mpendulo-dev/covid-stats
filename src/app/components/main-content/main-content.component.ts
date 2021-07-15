@@ -12,51 +12,63 @@ export class MainContentComponent implements OnInit {
 
 
   // pagination variables
-    totalLength: any;
-    page: number = 1;
+  totalLength: any;
+  page: number = 1;
 
-    // API data
-    covidCountryData;
+  // API data
+  covidCountryData;
+  countryData;
 
-   // Declare models
-    countryName: string[] = [];
-    infected: number[] = [];
-    deaths: number[] = [];
-    recovered: number[] = [];
-    tested: number;
-    flag: string[] = [];
-    date: Date;
+  // Declare models
+  countryName: string[] = [];
+  infected: number[] = [];
+  deaths: number[] = [];
+  recovered: number[] = [];
+  tested: number;
+  flag: string[] = [];
+  date: Date;
 
   constructor(private apiService: CovidApiService, private country: CountriesService) { }
 
   ngOnInit(): void {
-    
+
     this.apiService.getData().subscribe(data => {
 
-      console.log(data);
-
-      // API data
+      // API response data
       this.covidCountryData = data;
 
-      // array length
+      // length of API array
       this.totalLength = this.covidCountryData.length;
 
-      for(let i = 0; i < this.totalLength; i++) {
-
-        // stats
-        this.infected = this.covidCountryData[0].infected;
-        this.recovered = this.covidCountryData[0].recovered;
-        this.deaths = this.covidCountryData[0].deceased;
-
-        // assign country name
-        this.countryName[i] = this.covidCountryData[i].country;
+      // countries API
+      this.country.getCountries().subscribe(items => {
 
 
-      }
-        console.log(this.infected);
-        console.log(this.countryName);
+        // Store API response
+        this.countryData = items;
+
+        for (let i = 0; i < this.totalLength; i++) {
+
+          // country name
+          this.countryName[i] = this.covidCountryData[i].country;
+
+         if(JSON.stringify(this.countryData[i].name) === JSON.stringify(this.covidCountryData[i].country)) {
+
+            this.infected[i] = this.covidCountryData[i].cases;
+            this.recovered = this.covidCountryData[i].recovered;
+            this.deaths = this.covidCountryData[i].deaths;
+            this.flag[i] = this.countryData[i].flag;
+        
+        }
+          
+        }
+        
+        
+      });
+
+
+
     });
-    
   }
 
 }
