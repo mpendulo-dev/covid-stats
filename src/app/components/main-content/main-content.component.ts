@@ -28,7 +28,7 @@ export class MainContentComponent implements OnInit {
   flag: string[] = [];
   date: Date;
 
-  constructor(private apiService: CovidApiService, private country: CountriesService) { }
+  constructor(private apiService: CovidApiService) { }
 
   ngOnInit(): void {
 
@@ -40,34 +40,21 @@ export class MainContentComponent implements OnInit {
       // length of API array
       this.totalLength = this.covidCountryData.length;
 
-      // countries API
-      this.country.getCountries().subscribe(items => {
+      
+      for (let i = 0; i < this.totalLength; i++) {
 
+        // check if country is valid and extract data
+        if (this.covidCountryData[i].country) {
 
-        // Store API response
-        this.countryData = items;
-
-        for (let i = 0; i < this.totalLength; i++) {
-
-          // country name
           this.countryName[i] = this.covidCountryData[i].country;
+          this.infected = this.covidCountryData[i].cases;
+          this.recovered = this.covidCountryData[i].recovered;
+          this.deaths = this.covidCountryData[i].deaths;
+          this.flag = this.covidCountryData[i].countryInfo.flag;
 
-         if(JSON.stringify(this.countryData[i].name) === JSON.stringify(this.covidCountryData[i].country)) {
-
-            this.infected[i] = this.covidCountryData[i].cases;
-            this.recovered = this.covidCountryData[i].recovered;
-            this.deaths = this.covidCountryData[i].deaths;
-            this.flag[i] = this.countryData[i].flag;
-        
+         
         }
-          
-        }
-        
-        
-      });
-
-
-
+      }
     });
   }
 

@@ -1,32 +1,32 @@
-<div class="col d-flex justify-content-center" *ngFor="let country of countryName |
- paginate: { itemsPerPage: 1, currentPage: page, totalItems:totalLength }" >
-    <div class="row card-group">
+<!-- Table with stats -->
+<div *ngFor="let covid of covidCountryData |
+paginate: { itemsPerPage: 1, currentPage: page, totalItems:totalLength }">
+    <div class="col d-flex justify-content-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Flag</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Cases</th>
+                    <th scope="col">Recovered</th>
+                    <th scope="col">Deaths</th>
 
-        <div class="col-4 m-3">
-            <div class="card" style="width: 18rem;">
-                <div>
-                     <img src="{{flag}}" class="card-img-top" alt="..."> 
-                </div>
-              
-                <div class="card-body">
-                    <h3 class="card-title text-center font-weight-bold">{{country}}</h3>
-                </div>
-                <ul class="list-group list-group-flush" *ngFor="let i of infected">
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="{{covid.countryInfo.flag}}" alt=""></td>
+                    <td>{{covid.country}}</td>
+                    <td>{{covid.cases.toLocaleString()}}</td>
+                    <td>{{covid.recovered.toLocaleString()}}</td>
+                    <td>{{covid.deaths.toLocaleString()}}</td>
 
-                    <li class="list-group-item text-center">Infected: {{i}}</li>
-                    <li class="list-group-item text-center">Recovered: {{recovered}}</li>
-                    <li class="list-group-item text-center">Deaths: {{deaths}}</li>
-                </ul>
-            </div>
-        </div>
-
+                </tr>
+            </tbody>
+        </table>
     </div>
-    
-</div>
 
-<hr>
-<br>
+</div>
 <!-- pagination controls -->
 
 <pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
-
