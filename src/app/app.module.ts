@@ -11,6 +11,8 @@ import { StatsCardsComponent } from './components/stats-cards/stats-cards.compon
 // pagination module
 import {NgxPaginationModule} from 'ngx-pagination';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
+import { CountryFilterPipe } from './components/main-content/country-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     MainContentComponent,
     StatsCardsComponent,
-    FooterComponent
+    FooterComponent,
+    CountryFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

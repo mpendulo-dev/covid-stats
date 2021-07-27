@@ -1,5 +1,3 @@
-import { CountriesService } from './../../services/countries.service';
-import { Covid } from './../../models/covid';
 import { CovidApiService } from './../../services/covid-api.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -27,6 +25,9 @@ export class MainContentComponent implements OnInit {
   tested: number;
   flag: string[] = [];
   date: Date;
+
+  // search
+  searchTerm: string;
 
   constructor(private apiService: CovidApiService) { }
 

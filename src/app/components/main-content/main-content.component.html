@@ -1,4 +1,22 @@
-<div *ngFor="let covid of covidCountryData |
+<!-- navbar with search input -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://freesvg.org/img/1585910660virus-freesvg.org.png" alt="" width="40px" height="40px">
+        </a>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search Country" aria-label="Search"
+            [(ngModel)]="searchTerm" name="search">
+        </form>
+    </div>
+</nav>
+
+<!-- statistics cards -->
+<stats-cards></stats-cards>
+
+
+<!-- country covid19 details -->
+<div *ngFor="let covid of covidCountryData | CountryFilter:searchTerm |
 paginate: { itemsPerPage: 1, currentPage: page, totalItems:totalLength }">
     <div class="col d-flex justify-content-center">
         <div class="card" style="width: 18rem;">
@@ -15,6 +33,7 @@ paginate: { itemsPerPage: 1, currentPage: page, totalItems:totalLength }">
             </ul>
         </div>
     </div>
+    <br>
 </div>
 <br>
 <hr>
