@@ -1,4 +1,4 @@
-# CovidApp - This application keeps track of the global covid19 stats with the use of an API that is updated daily. 
+# Angular CovidApp - This application keeps track of the global covid19 stats with the use of an API that is updated daily. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
