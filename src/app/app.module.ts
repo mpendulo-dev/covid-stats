@@ -12,7 +12,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 
 // Piper
 import { FormsModule } from '@angular/forms';
-import { CountryFilterPipe } from './components/main-content/country-filter.pipe';
+import { CountryFilterPipe } from './components/main-content/country-Filter/country-filter.pipe';
 
 @NgModule({
   declarations: [
