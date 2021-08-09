@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  COVID_URL: 'https://corona.lmao.ninja/v2/countries'
 };

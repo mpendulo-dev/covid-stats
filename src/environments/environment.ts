@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  COVID_URL: 'https://corona.lmao.ninja/v2/countries'
 };
 
 /*
