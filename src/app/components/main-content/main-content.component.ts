@@ -1,5 +1,6 @@
 import { CovidApiService } from '../../services/covid-service/covid-api.service';
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'main-content',
@@ -29,14 +30,20 @@ export class MainContentComponent implements OnInit {
   // search
   searchTerm: string;
 
-  constructor(private apiService: CovidApiService) { }
+  constructor(private apiService: CovidApiService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+
+    /*spinner starts on init */
+    this.spinner.show();
 
     this.apiService.getData().subscribe(data => {
 
       // API response data
       this.covidCountryData = data;
+
+      // end spinner
+        this.spinner.hide();
 
       // length of API array
       this.totalLength = this.covidCountryData.length;
