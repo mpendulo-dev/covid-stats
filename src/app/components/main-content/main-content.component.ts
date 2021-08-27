@@ -33,17 +33,10 @@ export class MainContentComponent implements OnInit {
   constructor(private apiService: CovidApiService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-
-    /*spinner starts on init */
-    this.spinner.show();
-
     this.apiService.getData().subscribe(data => {
 
       // API response data
       this.covidCountryData = data;
-
-      // end spinner
-        this.spinner.hide();
 
       // length of API array
       this.totalLength = this.covidCountryData.length;
