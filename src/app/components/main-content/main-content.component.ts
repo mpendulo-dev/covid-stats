@@ -33,6 +33,11 @@ export class MainContentComponent implements OnInit {
   constructor(private apiService: CovidApiService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.getCountryData();
+  }
+
+  //get api data
+  getCountryData() {
     this.apiService.getData().subscribe(data => {
 
       // API response data
@@ -51,12 +56,12 @@ export class MainContentComponent implements OnInit {
           this.infected = this.covidCountryData[i].cases;
           this.recovered = this.covidCountryData[i].recovered;
           this.deaths = this.covidCountryData[i].deaths;
-          this.flag = this.covidCountryData[i].countryInfo.flag;
-
-         
+          this.flag = this.covidCountryData[i].countryInfo.flag;    
         }
       }
     });
+
   }
+  
 
 }
