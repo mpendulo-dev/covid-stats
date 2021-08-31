@@ -15,7 +15,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
 // Piper
 import { FormsModule } from '@angular/forms';
 import { CountryFilterPipe } from './components/country filter/country-filter.pipe';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,10 @@ import { CountryFilterPipe } from './components/country filter/country-filter.pi
     HttpClientModule,
     NgxPaginationModule,
     FormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot()
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

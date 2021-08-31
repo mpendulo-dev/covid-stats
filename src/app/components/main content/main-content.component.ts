@@ -1,6 +1,7 @@
 import { CovidApiService } from '../../services/covid-api.service';
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'main-content',
@@ -30,7 +31,8 @@ export class MainContentComponent implements OnInit {
   // search
   searchTerm: string;
 
-  constructor(private apiService: CovidApiService, private spinner: NgxSpinnerService) { }
+  constructor(private apiService: CovidApiService, private spinner: NgxSpinnerService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getCountryData();
@@ -59,7 +61,12 @@ export class MainContentComponent implements OnInit {
           this.flag = this.covidCountryData[i].countryInfo.flag;    
         }
       }
-    });
+    },
+    (error) => {
+      //catch errors, either when api doesn't return data.
+      this.toastr.error('Please try again later', 'Something went wrong!');
+    } 
+    );
 
   }
   
