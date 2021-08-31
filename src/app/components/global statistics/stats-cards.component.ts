@@ -1,4 +1,4 @@
-import { CovidApiService } from '../../services/covid-service/covid-api.service';
+import { CovidApiService } from '../../services/covid-api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -16,7 +16,10 @@ export class StatsCardsComponent implements OnInit {
   constructor(private apiService: CovidApiService) { }
 
   ngOnInit(): void {
+      this.globalStatistics();
+  }
 
+  globalStatistics() {
     // Get total infections,recoveries, and number of deaths
     this.apiService.getData().subscribe(data => {
 
@@ -36,7 +39,6 @@ export class StatsCardsComponent implements OnInit {
           this.totalDeaths += this.countryData[i].deaths;
         }
     });
-
   }
 
 }

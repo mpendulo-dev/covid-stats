@@ -6,15 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainContentComponent } from './components/main-content/main-content.component';
-import { StatsCardsComponent } from './components/stats-cards/stats-cards.component';
+import { MainContentComponent } from './components/main content/main-content.component';
+import { StatsCardsComponent } from './components/global statistics/stats-cards.component';
 
 // pagination module
 import {NgxPaginationModule} from 'ngx-pagination';
 
 // Piper
 import { FormsModule } from '@angular/forms';
-import { CountryFilterPipe } from './components/main-content/country-Filter/country-filter.pipe';
+import { CountryFilterPipe } from './components/country filter/country-filter.pipe';
 
 @NgModule({
   declarations: [

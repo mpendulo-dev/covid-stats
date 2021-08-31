@@ -1,4 +1,4 @@
-import { CovidApiService } from '../../services/covid-service/covid-api.service';
+import { CovidApiService } from '../../services/covid-api.service';
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
 
