@@ -1,27 +1,31 @@
-# Angular CovidApp - This application keeps track of the global covid19 stats with the use of an API that is updated daily. 
+# COVID19-APP - This application keeps track of the global covid19 stats with the use of an API that is updated daily. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+1. Methedologies.
+  <ul><li>Agile</li></ul>
+2. Programming Languages/Frameworks: 
+  <ul><li>Angular2+</li></ul>
+  <ul><li>TypeScript</li></ul>
+  <ul><li>Bootstrap</li></ul>
 
-## Development server
+# Live demo
+<ul><li>
+ <a href="https://corona-covid.netlify.app/" target="_blank">Corona Virus Tracker</a>
+ </li></ul>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Instructions
+1. Install the following using the terminal:
+  <ul><li><a href="https://nodejs.org/en/">NodeJS</a></li></ul>
+  <ul><li><a href="https://angular.io/cli/">Angular CLI</a></li></ul>
 
-## Code scaffolding
+2. Clone the repository in your local machine:
+  <ul><li> git clone https://github.com/mpendulo-dev/portfolio_v1.git</li></ul>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. Switch to repo directory: 
+  <ul><li>cd portfolio </li></ul>
 
-## Build
+4. Install node-modules
+  <ul><li>npm install </li></ul>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+5. Run application:
+  <ul><li>ng serve </li></ul>
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
