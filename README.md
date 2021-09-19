@@ -18,7 +18,7 @@
   <ul><li><a href="https://angular.io/cli/">Angular CLI</a></li></ul>
 
 2. Clone the repository in your local machine:
-  <ul><li> git clone https://github.com/mpendulo-dev/portfolio_v1.git</li></ul>
+  <ul><li> git clone https://github.com/mpendulo-dev/covid-stats.git</li></ul>
 
 3. Switch to repo directory: 
   <ul><li>cd portfolio </li></ul>
