@@ -14,6 +14,8 @@
 <!-- statistics cards -->
 <stats-cards></stats-cards>
 
+<!-- spinner -->
+
 
 <!-- country covid19 details -->
 <div *ngFor="let covid of covidCountryData | CountryFilter:searchTerm |
@@ -39,5 +41,5 @@ paginate: { itemsPerPage: 1, currentPage: page, totalItems:totalLength }">
 
 <!-- TODO: make pagination with alphabets -->
 <!-- pagination controls -->
-<pagination-controls class="text-center my-pagination" (pageChange)="page = $event"
-autoHide="true"></pagination-controls>
+<pagination-controls class="text-center my-pagination" (pageChange)="page = $event" autoHide="true">
+</pagination-controls>

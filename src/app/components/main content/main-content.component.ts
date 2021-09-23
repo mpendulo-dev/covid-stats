@@ -42,33 +42,31 @@ export class MainContentComponent implements OnInit {
   getCountryData() {
     this.apiService.getData().subscribe(data => {
 
+
       // API response data
       this.covidCountryData = data;
 
       // length of API array
       this.totalLength = this.covidCountryData.length;
 
-      
-      for (let i = 0; i < this.totalLength; i++) {
+      for( let key in this.covidCountryData) {
 
-        // check if country is valid and extract data
-        if (this.covidCountryData[i].country) {
+        if (this.covidCountryData[key].country) {
 
-          this.countryName[i] = this.covidCountryData[i].country;
-          this.infected = this.covidCountryData[i].cases;
-          this.recovered = this.covidCountryData[i].recovered;
-          this.deaths = this.covidCountryData[i].deaths;
-          this.flag = this.covidCountryData[i].countryInfo.flag;    
+          this.countryName[key] = this.covidCountryData[key].country;
+          this.infected = this.covidCountryData[key].cases;
+          this.recovered = this.covidCountryData[key].recovered;
+          this.deaths = this.covidCountryData[key].deaths;
+          this.flag = this.covidCountryData[key].countryInfo.flag;
+
         }
       }
     },
     (error) => {
       //catch errors, either when api doesn't return data.
       this.toastr.error('Please try again later', 'Something went wrong!');
-    } 
-    );
+    });
 
   }
-  
 
 }
