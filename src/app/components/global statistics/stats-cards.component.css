@@ -1,1 +1,11 @@
 /* mobile responsive - for small, medium and large phones */
+@media (min-width: 480px)  and (max-width: 990px) {
+  div.card-header {
+    height: 80px;
+    width: 120px;
+  }
+  div.card-body {
+    height: 80px;
+    width: 120px;
+  }
+}
